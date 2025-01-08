@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتيجة الطالب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #0044cc;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #0044cc;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #003399;
+        }
+        .table-container {
+            margin-top: 30px;
+            display: none;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 70%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0044cc;
+            color: white;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>جامعة الزقازيق الأهلية</h1>
+    <div class="container">
+        <input type="text" id="nationalId" placeholder="الرقم القومي">
+        <input type="text" id="studentCode" placeholder="كود الطالب">
+        <button onclick="showResult()">نتيجة الطالب</button>
+    </div>
+    <div class="table-container" id="resultTable">
+        <table>
+            <thead>
+                <tr>
+                    <th>المادة</th>
+                    <th>المجموع</th>
+                    <th>التقدير</th>
+                    <th>الحالة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>اقتصاد</td>
+                    <td>94</td>
+                    <td>امتياز</td>
+                    <td class="success">✔</td>
+                </tr>
+                <tr>
+                    <td>إحصاء</td>
+                    <td>94</td>
+                    <td>امتياز</td>
+                    <td class="success">✔</td>
+                </tr>
+                <tr>
+                    <td>محاسبة متوسطة</td>
+                    <td>94</td>
+                    <td>امتياز</td>
+                    <td class="success">✔</td>
+                </tr>
+                <tr>
+                    <td>محاسبة قومية</td>
+                    <td>94</td>
+                    <td>امتياز</td>
+                    <td class="success">✔</td>
+                </tr>
+                <tr>
+                    <td>إدارة</td>
+                    <td>94</td>
+                    <td>امتياز</td>
+                    <td class="success">✔</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function showResult() {
+            const nationalId = document.getElementById('nationalId').value;
+            const studentCode = document.getElementById('studentCode').value;
+
+            // تحقق من الرقم القومي وكود الطالب
+            if (nationalId === '30407042200171' && studentCode === '27912023100061') {
+                document.getElementById('resultTable').style.display = 'block';
+            } else {
+                alert('الرقم القومي أو كود الطالب غير صحيح!');
+            }
+        }
+    </script>
+</body>
+</html>
